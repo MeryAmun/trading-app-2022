@@ -12,7 +12,7 @@ justifyContent:'center'
 }))
 interface DataGridProps<T>{
     showNoRowsOverlay?: boolean;
-    size:{ height: number | string, width: number | string };
+    size:{ height: number | string; width: number | string };
     gridData: T[];
     colDef: ColDef[];
     rowClickHandler?: (event: RowClickedEvent) => void
