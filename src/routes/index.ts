@@ -10,7 +10,7 @@ type IconType = OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
     muiName: string;
 }
 export type RouteType = {label: string, icon: IconType, path: typeof MAIN | typeof BLOTTER | typeof TRADE_TICKET}
-export const Routes: RouteType[] =  [
+export const routes: RouteType[] =  [
     {label: 'Home', path: MAIN, icon: Home},
     {label: 'Trade Blotter', path: BLOTTER, icon: TableView},
     {label: 'Trade Ticket', path: TRADE_TICKET, icon: ConfirmationNumber}
