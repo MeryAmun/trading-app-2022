@@ -17,7 +17,8 @@ interface DataGridProps<T>{
     colDef: ColDef[];
     rowClickHandler?: (event: RowClickedEvent) => void
 }
-export const DataGrid = <T,>({showNoRowsOverlay,
+export const DataGrid = <T,>({
+    showNoRowsOverlay,
     size,
      gridData,
      colDef,

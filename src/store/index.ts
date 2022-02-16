@@ -1,9 +1,14 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { tradesApi } from "../services/tradesApi";
 
 export const store = configureStore({
-    reducer: {},
+    reducer: {
+        [tradesApi.reducerPath]: tradesApi.reducer,
+    },
     middleware: (getDefaultMiddleware) => (
-        getDefaultMiddleware().concat()
+        getDefaultMiddleware().concat(
+            tradesApi.middleware,
+        )
         )
     
 })

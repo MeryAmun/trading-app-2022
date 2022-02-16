@@ -7,6 +7,8 @@ import { Menu } from './components/Menu/Menu';
 import { BLOTTER, MAIN, routes, TRADE_TICKET } from './routes';
 import { Blotter, Dashboard, Tradeticket } from './Features';
 import { Routes, Route, useNavigate} from 'react-router-dom'
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 
 export const  App: React.FC = ():JSX.Element => {
@@ -38,7 +40,8 @@ setSidebarToggle(!sidebarToggle)
            }, [navigate, sidebarToggle])
      
   return (
-    <ThemeProvider theme={theme}> 
+   <Provider store={store}>
+      <ThemeProvider theme={theme}> 
     <CssBaseline/>
     <AppBarComponent handleDrawerToggle={handleDrawerToggle} onThemeChange={onThemeChange}
     isDarkMode={themeMode === "dark"}
@@ -53,6 +56,7 @@ setSidebarToggle(!sidebarToggle)
       </Routes>
     
    </ThemeProvider>
+   </Provider>
   );
 }
 
