@@ -51,7 +51,7 @@ useEffect(() => {
         rowSelection='single'
         defaultColDef={{
             resizable: true,
-            filter: true
+            filter: true,
         }}
         onRowClicked={rowClickHandler}>
         
