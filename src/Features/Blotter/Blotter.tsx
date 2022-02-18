@@ -17,7 +17,7 @@ const data3 = [1,2,3,4,5]
   return (
     <div>
        <DataGrid
-       gridData={data || data3}
+       gridData={[{name:"typescript"}]}
        colDef={tradeBlotterColDef}
        showNoRowsOverlay={showNoRowsOverlay}
        rowClickHandler={rowClickHandler}

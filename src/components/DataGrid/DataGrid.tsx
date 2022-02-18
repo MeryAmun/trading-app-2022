@@ -25,8 +25,9 @@ export const DataGrid = <T,>({
      rowClickHandler = undefined
 }: DataGridProps<T>): JSX.Element => {
     const [gridApi, setGridApi] = useState<GridApi>();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [gridColumnApi, setGridColumnApi] = useState(null)
-const {palette} = useTheme();
+const { palette } = useTheme();
 const onGridReady = (params: any) => {
     setGridApi(params.api);
     setGridColumnApi(params.columnApi)
@@ -44,17 +45,19 @@ useEffect(() => {
         palette.mode === 'dark' 
         ? 'ag-theme-alpine-dark'
          : 'ag-theme-alpine'
-        }`}>
+        }`}
+        style={{ ...size }}
+        >
         <AgGridReact
         rowData={gridData}
         onGridReady={onGridReady}
         rowSelection='single'
+        columnDefs={colDef}
         defaultColDef={{
             resizable: true,
             filter: true,
         }}
         onRowClicked={rowClickHandler}>
-        
         </AgGridReact>
         </div>
       </GridStyledWrapper>
