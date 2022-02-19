@@ -5,7 +5,7 @@ import { tradeBlotterColDef } from './config';
 
 export const Blotter: React.FC = (): JSX.Element => {
 const [showNoRowsOverlay, setShowNoRowsOverlay] = useState<boolean>(false)
-const {data} = useGetTradesQuery(undefined, {pollingInterval : 3000})
+const {data} = useGetTradesQuery(undefined, {pollingInterval : 30000})
 const rowClickHandler = useCallback(
   () => {
  //implement
@@ -17,7 +17,7 @@ const data3 = [1,2,3,4,5]
   return (
     <div>
        <DataGrid
-       gridData={[{name:"typescript"}]}
+       gridData={data || []}
        colDef={tradeBlotterColDef}
        showNoRowsOverlay={showNoRowsOverlay}
        rowClickHandler={rowClickHandler}
