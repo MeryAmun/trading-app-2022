@@ -14,7 +14,7 @@ const TicketStyledWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 1),
 }));
 
-export const TradeTicket: React.FC = (): JSX.Element => {
+export const Tradeticket: React.FC = (): JSX.Element => {
   const { loading, error, ticketId, ccyList, cptyList, bondList } =
     useTicketApis();
   return (
