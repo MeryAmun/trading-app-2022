@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Button, Stack } from "@mui/material";
 import React, { useCallback, useEffect } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { BLOTTER } from "../../../routes";
 import {
   useGetNewTicketIdQuery,
@@ -17,7 +17,7 @@ import {
 } from "../hooks/usePayloadValidation";
 
 export const TicketActionBar = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const dispatch = useAppDispatch();
   const { validatePayload } = usePayloadValidation();
   const {
@@ -120,7 +120,7 @@ export const TicketActionBar = () => {
     console.log(executeResult.data);
     if (executeResult.data?.status === "success") {
       setTimeout(() => {
-        history.push(BLOTTER);
+        history(BLOTTER);
         dispatch(purgeAction());
         // TODO: show a popup / modal for trade confirmation. TASK for dear viewers
       }, 3000);
